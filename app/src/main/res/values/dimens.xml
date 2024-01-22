@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default sizes !-->
+    <dimen name="actionBarTextSize">@dimen/_14ssp</dimen>
+    <dimen name="defaultScreenMargin">@dimen/_4sdp</dimen>
+    <dimen name="mediumScreenMargin">@dimen/_8sdp</dimen>
+    <dimen name="multipleScreenMargin">@dimen/_12sdp</dimen>
+    <dimen name="largeScreenMargin">@dimen/_20sdp</dimen>
+    <!-- HomeScreen !-->
+    <dimen name="viewpager_next_item_visible">@dimen/_22sdp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">42dp</dimen>
+    <dimen name="viewpager_viewDeal_button_size">@dimen/_43sdp</dimen>
+    <dimen name="viewpager_viewDeal_button_corner_radius">28dp</dimen>
+    <dimen name="viewpager_viewDeal_button_stroke_width">@dimen/_2sdp</dimen>
+    <dimen name="homeFragment_games_title_text_size">@dimen/_12ssp</dimen>
+    <dimen name="homeFragment_games_description_text_size">@dimen/_10ssp</dimen>
+    <dimen name="viewpager_viewDeal_button_icon_size">@dimen/_22sdp</dimen>
+    <!-- GamesScreen !-->
+    <dimen name="gamesFragmentItemTitleTextSize">@dimen/_10ssp</dimen>
+    <dimen name="gamesFragmentErrorTitleTextSize">@dimen/_12ssp</dimen>
+    <dimen name="gamesFragmentErrorSecTextSize">@dimen/_11ssp</dimen>
+    <dimen name="gamesFragmentItemDescriptionTextSize">@dimen/_9ssp</dimen>
+    <dimen name="gamesFragmentItemDescriptionTextMargin">2sp</dimen>
+    <dimen name="gamesFragmentItemTextMargin">@dimen/_5sdp</dimen>
+    <dimen name="gamesFragmentSpinnerTextSize">@dimen/_10ssp</dimen>
+    <dimen name="gamesFragmentSpinnerPadding">@dimen/_2sdp</dimen>
+    <dimen name="gamesFragmentSpinnerIconSize">@dimen/_20sdp</dimen>
+    <dimen name="gamesFragmentSpinnerMarginBottom">@dimen/_1sdp</dimen>
+    <dimen name="gamesFragmentEditTextSizeWidth">@dimen/_48sdp</dimen>
+    <dimen name="gamesFragmentMaxPriceTextMargin">@dimen/_2sdp</dimen>
+    <dimen name="gamesFragmentProgressBarSize">@dimen/_32sdp</dimen>
+    <!-- Error Screens !-->
+    <dimen name="error_layout_large_margin">@dimen/_22sdp</dimen>
+    <dimen name="error_layout_huge_margin">@dimen/_28sdp</dimen>
+    <dimen name="error_layout_text_size">@dimen/_12ssp</dimen>
+    <!-- Web Screen !-->
+    <dimen name="activityWebIconSize">@dimen/_14sdp</dimen>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/nav_home_icon"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/gamesFragment"
+        android:icon="@drawable/nav_games_icon"
+        android:title="Games" />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/nav_search_icon"
+        android:title="Search"/>
+
+    <item
+        android:id="@+id/uncheckedItem"
+        android:visible="false"
+        android:title="" />
+
+</menu>

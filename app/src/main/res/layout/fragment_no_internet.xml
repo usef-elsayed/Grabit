@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/internetMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:paddingBottom="?attr/actionBarSize"
+        android:paddingTop="@dimen/multipleScreenMargin">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/imageStartGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/imageEndGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/internetScreenImageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/no_internet_error"
+            android:scaleType="centerCrop"
+            app:tint="@color/semiTransBackgroundColor"
+            android:tintMode="src_atop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/imageStartGuide"
+            app:layout_constraintEnd_toEndOf="@id/imageEndGuide"
+            app:layout_constraintDimensionRatio="H,1:1.1"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            android:layout_marginTop="@dimen/error_layout_large_margin"/>
+        <TextView
+            android:id="@+id/internetErrorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_title"
+            android:textSize="@dimen/gamesFragmentErrorTitleTextSize"
+            android:textStyle="bold"
+            android:textColor="@color/textColor"
+            app:layout_constraintTop_toBottomOf="@id/internetScreenImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/largeScreenMargin"
+            android:layout_marginBottom="@dimen/defaultScreenMargin"/>
+        <TextView
+            android:id="@+id/internetErrorDetailsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_internet_desc"
+            android:textColor="@color/textColor"
+            android:textAlignment="center"
+            android:textSize="@dimen/gamesFragmentErrorSecTextSize"
+            android:alpha="0.8"
+            app:layout_constraintTop_toBottomOf="@id/internetErrorTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/mediumScreenMargin"
+            android:layout_marginBottom="@dimen/multipleScreenMargin"
+            android:layout_marginStart="@dimen/multipleScreenMargin"
+            android:layout_marginEnd="@dimen/multipleScreenMargin"/>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonTopGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/internetScreenTryAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/try_again"
+            android:textColor="@color/black"
+            android:background="@drawable/two_layers_button_background"
+            app:layout_constraintTop_toTopOf="@id/buttonTopGuide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/multipleScreenMargin" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

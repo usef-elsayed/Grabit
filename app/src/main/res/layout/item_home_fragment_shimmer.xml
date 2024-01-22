@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+    <View
+        android:id="@+id/gamesItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@id/topGuide"
+        app:layout_constraintBottom_toBottomOf="@id/bottomGuide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/viewpager_games_item_background"
+        android:backgroundTint="@color/shimmerColor" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageStartGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageEndGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/gameItemImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,1:1.35"
+        app:layout_constraintStart_toStartOf="@id/imageStartGuide"
+        app:layout_constraintEnd_toEndOf="@id/imageEndGuide"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        android:src="@color/shimmerColor" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gameEndButtonGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.58" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gameStartButtonGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gameTopButtonGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gameBottomButtonGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gameItemViewButton"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        app:cornerRadius="@dimen/viewpager_viewDeal_button_corner_radius"
+        android:layout_width="@dimen/viewpager_viewDeal_button_size"
+        android:layout_height="@dimen/viewpager_viewDeal_button_size"
+        app:icon="@drawable/icon_up"
+        app:iconTint="@color/shimmerColor"
+        app:iconGravity="textTop"
+        app:iconPadding="0dp"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:textAlignment="center"
+        app:backgroundTint="@color/shimmerColor"
+        app:elevation="0dp"
+        app:strokeColor="@color/shimmerColor"
+        app:layout_constraintStart_toStartOf="@id/gameStartButtonGuide"
+        app:layout_constraintEnd_toEndOf="@id/gameEndButtonGuide"
+        app:layout_constraintTop_toTopOf="@id/gameTopButtonGuide"
+        app:layout_constraintBottom_toBottomOf="@id/gameBottomButtonGuide" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+</androidx.constraintlayout.widget.ConstraintLayout>

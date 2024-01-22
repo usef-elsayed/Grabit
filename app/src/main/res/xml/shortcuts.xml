@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="gamesFragmentShortcut"
+        android:enabled="true"
+        android:icon="@drawable/nav_games_icon"
+        android:shortcutShortLabel="@string/games_shortcut_short_label"
+        android:shortcutLongLabel="@string/games_shortcut_long_label"
+        android:shortcutDisabledMessage="@string/games_shortcut_disabled_message">
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:data="GamesFragment"
+        android:targetPackage="com.yousefelsayed.gamescheap"
+        android:targetClass="com.yousefelsayed.gamescheap.view.activity.MainActivity" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="searchFragmentShortcut"
+        android:enabled="true"
+        android:icon="@drawable/nav_search_icon"
+        android:shortcutShortLabel="@string/search_shortcut_short_label"
+        android:shortcutLongLabel="@string/search_shortcut_long_label"
+        android:shortcutDisabledMessage="@string/search_shortcut_disabled_message">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="SearchFragment"
+            android:targetPackage="com.yousefelsayed.gamescheap"
+            android:targetClass="com.yousefelsayed.gamescheap.view.activity.MainActivity" />
+    </shortcut>
+</shortcuts>

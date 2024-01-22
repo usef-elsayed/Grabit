@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/zeroResultsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:visibility="visible">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageStartGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageEndGuide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/zeroResultsScreenImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="H,1:1.1"
+        android:src="@drawable/error_zero_results"
+        android:scaleType="centerCrop"
+        app:tint="@color/transBackgroundColor"
+        android:tintMode="src_atop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageStartGuide"
+        app:layout_constraintEnd_toEndOf="@id/imageEndGuide"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        android:layout_marginTop="@dimen/error_layout_large_margin"/>
+    <TextView
+        android:id="@+id/zeroResultsErrorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zero results found"
+        android:textSize="@dimen/error_layout_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/textColor"
+        app:layout_constraintTop_toBottomOf="@id/zeroResultsScreenImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/error_layout_huge_margin"
+        android:layout_marginBottom="@dimen/error_layout_huge_margin"/>
+    <TextView
+        android:id="@+id/zeroResultsErrorDetailsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Try using a different keyword"
+        android:textColor="@color/textColor"
+        android:textAlignment="center"
+        android:textSize="@dimen/gamesFragmentErrorSecTextSize"
+        android:alpha="0.8"
+        app:layout_constraintTop_toBottomOf="@id/zeroResultsErrorTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/defaultScreenMargin"
+        android:layout_marginBottom="@dimen/error_layout_large_margin"
+        android:layout_marginStart="@dimen/error_layout_large_margin"
+        android:layout_marginEnd="@dimen/error_layout_large_margin"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

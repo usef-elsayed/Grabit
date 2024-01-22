@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Main Colors !-->
+    <color name="navItemColor">#C5C6C8</color>
+    <color name="activeNavItemColor">#5b6e24</color>
+    <color name="shimmerColor">#dddddd</color>
+    <color name="transBackgroundColor">#80F4F4F4</color>
+    <color name="semiTransBackgroundColor">#4DF4F4F4</color>
+    <color name="transBlack">#73000000</color>
+    <color name="errorScreenButtonColor">#fff</color>
+    <color name="homeFragmentViewPagerTextColor">#FFFFFFFF</color>
+    <color name="homeFragmentViewPagerDarkTextColor">#000000</color>
+    <!-- Dark Mode Colors !-->
+    <color name="errorScreenButtonShadowColor">#5b6e24</color>
+    <color name="backgroundColor">#17181E</color>
+    <color name="bottomNavColor">#181A20</color>
+    <color name="iconColor">#FFFFFF</color>
+    <color name="textColor">#FFFFFF</color>
+</resources>
