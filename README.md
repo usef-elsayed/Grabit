@@ -12,6 +12,8 @@ GRABIT is a Native Android application that retrieves free and on-sale games fro
 ## Technolgy used:
 
 - Kotlin
+- Kotlin Coroutines
+- Kotlin Flow
 - MVVM (Model-View-ViewModel)
 - Hilt
 - Retrofit
