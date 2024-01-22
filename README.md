@@ -1,6 +1,6 @@
 # GRABIT
 ![GitHub License](https://img.shields.io/github/license/usef-elsayed/Grabit)
-![Google Play](https://img.shields.io/website?url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.yousefelsayed.gamescheap)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.yousefelsayed.gamescheap&label=Google%20Play)
 
 
 GRABIT is a Native Android application that retrieves free and on-sale games from Steam, Epic Games, and 18+ other stores using Cheap Shark API.
