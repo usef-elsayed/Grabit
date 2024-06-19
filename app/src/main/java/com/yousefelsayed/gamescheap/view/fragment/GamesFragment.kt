@@ -112,7 +112,7 @@ class GamesFragment: Fragment() {
                     }
                     Status.LOADING -> {
                         showShimmerLayout()
-                    }
+                    } 
                 }
             }
         }
