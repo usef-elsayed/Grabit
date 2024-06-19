@@ -81,11 +81,12 @@ class GamesFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolde
                     .centerCrop()
                     .format(DecodeFormat.PREFER_RGB_565)
                     .listener(object: RequestListener<Bitmap>{
-                        override fun onLoadFailed(e: GlideException?, model: Any?,target: Target<Bitmap>?, isFirstResource: Boolean, ): Boolean {
+                        override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Bitmap>, isFirstResource: Boolean): Boolean {
                             return false
                         }
-                        override fun onResourceReady(resource: Bitmap?, model: Any?,target: Target<Bitmap>?, dataSource: DataSource?, isFirstResource: Boolean, ): Boolean {
-                            if (resource != null && !resource.isRecycled){
+
+                        override fun onResourceReady(resource: Bitmap, model: Any, target: Target<Bitmap>?, dataSource: DataSource, isFirstResource: Boolean): Boolean {
+                            if (!resource.isRecycled){
                                 val palette = Palette.from(resource).generate()
                                 val transparentDominantColor = ColorUtils.setAlphaComponent(palette.getDominantColor(Color.BLACK),180)
                                 holder.gameBackground.setImageBitmap(resource)
@@ -108,7 +109,7 @@ class GamesFragmentRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
     override fun getItemViewType(position: Int): Int {
-        return if (position+1 >= differ.currentList.size) LOADING_ITEM_VIEW else GAME_ITEM_VIEW
+        return if (position + 1 >= differ.currentList.size && position != 0) LOADING_ITEM_VIEW else GAME_ITEM_VIEW
     }
 
     override fun onViewRecycled(holder: RecyclerView.ViewHolder) {

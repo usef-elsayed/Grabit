@@ -1,15 +1,15 @@
 package com.yousefelsayed.gamescheap.viewModel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yousefelsayed.gamescheap.api.Resource
 import com.yousefelsayed.gamescheap.model.GameItemModel
-import com.yousefelsayed.gamescheap.model.GamesArrayModel
 import com.yousefelsayed.gamescheap.model.SessionFilterModel
 import com.yousefelsayed.gamescheap.repository.GamesFragmentRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.launch
@@ -20,12 +20,19 @@ class GamesFragmentViewModel @Inject constructor(private val gamesFragmentReposi
 
     private val sessionFilterModel = SessionFilterModel()
     private val _gamesDeals = MutableStateFlow<Resource<ArrayList<GameItemModel>>>(Resource.loading())
+    private var currentActiveJob: Job? = null
     val gamesDeals get() = _gamesDeals
 
     fun getStoresDeals(){
-        viewModelScope.launch(Dispatchers.IO) {
+        currentActiveJob?.cancel()
+        currentActiveJob = viewModelScope.launch(Dispatchers.IO) {
+            delay(300)
             gamesFragmentRepository.getGamesDeals(sessionFilterModel.getStoresArrayInString(),sessionFilterModel.maxPrice,sessionFilterModel.pageNumber.toString(),sessionFilterModel.getSortMode()).catch { error ->
-                _gamesDeals.value = Resource.error(error.message!!)
+                _gamesDeals.value = if(error.message != null){
+                    Resource.error(error.message!!)
+                }else {
+                    Resource.error("NULL")
+                }
             }
                 .collect{ result ->
                     gamesFragmentRepository.addToGamesList(result)
@@ -39,23 +46,23 @@ class GamesFragmentViewModel @Inject constructor(private val gamesFragmentReposi
     fun getCurrentGamesListSize(): Int {
         return gamesFragmentRepository.getCurrentGamesListSize()
     }
-    fun clearGamesList() {
+    private fun clearGamesList() {
         gamesFragmentRepository.clearGamesList()
     }
     fun changeMaxPrice(newMaxPrice: String){
         if (newMaxPrice.isNotEmpty() && newMaxPrice != "" && newMaxPrice != " "){
             sessionFilterModel.maxPrice = newMaxPrice
-            changePageNumber(0)
+            resetPageNumber()
             clearGamesList()
         }
     }
     fun changeSortMode(newSortMode: String){
         sessionFilterModel.setSortMode(newSortMode)
-        changePageNumber(0)
+        resetPageNumber()
         clearGamesList()
     }
-    fun changePageNumber(newPageNumber: Int){
-        sessionFilterModel.pageNumber = newPageNumber
+    private fun resetPageNumber(){
+        sessionFilterModel.pageNumber = 0
     }
     fun increasePageNumber(){
         sessionFilterModel.pageNumber++

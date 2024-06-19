@@ -15,8 +15,8 @@ android {
         applicationId = "com.yousefelsayed.gamescheap"
         minSdk = 24
         targetSdk = 33
-        versionCode = 8
-        versionName = "2.0"
+        versionCode = 9
+        versionName = "2.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -42,18 +42,18 @@ android {
 }
 
 dependencies {
-    val glideVersion = "4.15.1"
+    val glideVersion = "4.16.0"
     val shimmerVersion = "0.5.0"
-    val lifecycleVersion = "2.7.0"
-    val navVersion = "2.7.6"
+    val lifecycleVersion = "2.8.2"
+    val navVersion = "2.7.7"
     val hiltVersion = "2.48.1"
-    val retrofitVersion = "2.9.0"
-    val okhttpVersion = "4.10.0"
-    val scalarsVersion = "2.5.0"
+    val retrofitVersion = "2.11.0"
+    val okhttpVersion = "4.12.0"
+    val scalarsVersion = "2.11.0"
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

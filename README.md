@@ -16,6 +16,7 @@ GRABIT is a Native Android application that retrieves free and on-sale games fro
 - Kotlin Flow
 - MVVM (Model-View-ViewModel)
 - Hilt
+- Navigation Component
 - Retrofit
 - Glide
 - SplashScreen API

@@ -49,11 +49,11 @@ class HomeScreenGamesViewPagerAdapter(private val gamesList: ArrayList<GameItemM
             .centerCrop()
             .format(DecodeFormat.PREFER_RGB_565)
             .listener(object: RequestListener<Bitmap>{
-                override fun onLoadFailed(e: GlideException?,model: Any?,target: Target<Bitmap>?,isFirstResource: Boolean): Boolean {
+                override fun onLoadFailed(e: GlideException?,model: Any?,target: Target<Bitmap>,isFirstResource: Boolean): Boolean {
                     return false
                 }
-                override fun onResourceReady(resource: Bitmap?, model: Any?,target: Target<Bitmap>?,dataSource: DataSource?,isFirstResource: Boolean): Boolean {
-                    if (resource != null){
+                override fun onResourceReady(resource: Bitmap, model: Any,target: Target<Bitmap>?,dataSource: DataSource,isFirstResource: Boolean): Boolean {
+                    if (!resource.isRecycled){
                         val palette = Palette.from(resource).generate()
                         holder.gameBackground.backgroundTintList = ColorStateList.valueOf(palette.getDominantColor(Color.BLACK))
                         if (!isBackgroundColorContrastGood(palette.getDominantColor(Color.BLACK),ContextCompat.getColor(holder.gameTitle.context,R.color.homeFragmentViewPagerTextColor))){

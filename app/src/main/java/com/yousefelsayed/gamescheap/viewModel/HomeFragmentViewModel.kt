@@ -1,5 +1,6 @@
 package com.yousefelsayed.gamescheap.viewModel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yousefelsayed.gamescheap.api.Resource
@@ -21,7 +22,11 @@ data class HomeFragmentViewModel @Inject constructor(private val homeFragmentRep
     fun getSteamAndEpicGames(){
         viewModelScope.launch(Dispatchers.IO) {
             homeFragmentRepository.getSteamAndEpicGames().catch { error ->
-                _steamEpicGames.value = Resource.error(error.message!!)
+                if (!error.message.isNullOrEmpty()){
+                    _steamEpicGames.value = Resource.error(error.message!!)
+                }else {
+                    _steamEpicGames.value = Resource.error("NULL")
+                }
             }
             .collect{ result ->
                     _steamEpicGames.value = Resource.success(result)

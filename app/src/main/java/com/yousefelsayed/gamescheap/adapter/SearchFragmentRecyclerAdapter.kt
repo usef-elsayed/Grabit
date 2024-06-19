@@ -61,11 +61,11 @@ class SearchFragmentRecyclerAdapter: RecyclerView.Adapter<SearchFragmentRecycler
             .centerCrop()
             .format(DecodeFormat.PREFER_RGB_565)
             .listener(object: RequestListener<Bitmap> {
-                override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Bitmap>?, isFirstResource: Boolean, ): Boolean {
+                override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Bitmap>, isFirstResource: Boolean): Boolean {
                     return false
                 }
-                override fun onResourceReady(resource: Bitmap?, model: Any?, target: Target<Bitmap>?, dataSource: DataSource?, isFirstResource: Boolean, ): Boolean {
-                    if (resource != null && !resource.isRecycled){
+                override fun onResourceReady(resource: Bitmap, model: Any, target: Target<Bitmap>?, dataSource: DataSource, isFirstResource: Boolean): Boolean {
+                    if (!resource.isRecycled){
                         val palette = Palette.from(resource).generate()
                         val transparentDominantColor = ColorUtils.setAlphaComponent(palette.getDominantColor(Color.BLACK),180)
                         holder.gameBackground.setImageBitmap(resource)

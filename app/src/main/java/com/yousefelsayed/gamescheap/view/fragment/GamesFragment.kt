@@ -75,7 +75,7 @@ class GamesFragment: Fragment() {
 
         }
         v.gamesFragmentRecyclerView.layoutManager = layoutManager
-        v.gamesFragmentRecyclerView.setItemViewCacheSize(8)
+        //v.gamesFragmentRecyclerView.setItemViewCacheSize(8)
         v.gamesFragmentRecyclerView.setHasFixedSize(true)
         v.gamesFragmentRecyclerView.adapter = recyclerAdapter
         //Setup spinner
@@ -142,14 +142,18 @@ class GamesFragment: Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>) {
             }
         }
-        v.gamesFragmentMaxPriceEditText.addTextChangedListener(object: TextWatcher{
+        v.gamesFragmentMaxPriceEditText.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
-            override fun afterTextChanged(s: Editable?) {
-                viewModel.changeMaxPrice(s.toString())
+            override fun afterTextChanged(s: Editable) {
+                if (s.toString().isEmpty()){
+                    viewModel.changeMaxPrice(s.toString())
+                }else {
+                    viewModel.changeMaxPrice("50")
+                }
                 v.gamesFragmentRecyclerView.scrollToPosition(0)
                 startApiRequest(shouldIncreasePageNumber = false, shouldOverrideOneRequest = true)
                 showShimmerLayout()

@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/try_again"
-            android:textColor="@color/textColor"
+            android:textColor="@color/black"
             android:background="@drawable/two_layers_button_background"
             app:layout_constraintTop_toTopOf="@id/buttonTopGuide"
             app:layout_constraintStart_toStartOf="parent"
